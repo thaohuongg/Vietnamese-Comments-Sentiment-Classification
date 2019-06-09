@@ -12,7 +12,7 @@ def get_all_file(path):
     return list_of_file
 
 def multiple_list(list, times):
-	new_list = list.copy()
+	new_list = []
 	for i in range (times):
 		new_list = new_list + list
 	return new_list
@@ -81,16 +81,16 @@ def clean_data(path1, path2, sizes):
 	train_pos_comments = pos_comments[:sizes[0]]
 	train_neg_comments = neg_comments[:sizes[1]]
 	
-	train_pos_comments = multiple_list(train_pos_comments, 10)
-	train_neg_comments = multiple_list(train_neg_comments, 10)
+	train_pos_comments = multiple_list(train_pos_comments, 11)
+	train_neg_comments = multiple_list(train_neg_comments, 11)
 	
 	print (len(train_pos_comments), len(train_neg_comments))
 	
 	test_pos_comments = pos_comments[-sizes[2]:]
 	test_neg_comments = neg_comments[-sizes[3]:]
 	
-	test_pos_comments = multiple_list(test_pos_comments, 10)
-	test_neg_comments = multiple_list(test_neg_comments, 10) 
+	test_pos_comments = multiple_list(test_pos_comments, 11)
+	test_neg_comments = multiple_list(test_neg_comments, 11) 
 	
 	
 	with open (r'../../preprocessed_data/train_neg_comments.pickle', 'wb') as file:

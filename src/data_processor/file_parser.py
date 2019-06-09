@@ -89,10 +89,6 @@ def clean_data(path1, path2, sizes):
 	test_pos_comments = pos_comments[-sizes[2]:]
 	test_neg_comments = neg_comments[-sizes[3]:]
 	
-	test_pos_comments = multiple_list(test_pos_comments, 11)
-	test_neg_comments = multiple_list(test_neg_comments, 11) 
-	
-	
 	with open (r'../../preprocessed_data/train_neg_comments.pickle', 'wb') as file:
 		pickle.dump(train_neg_comments, file)
 		

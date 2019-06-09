@@ -52,7 +52,7 @@ def main():
 		pickle.dump(clf, file, pickle.HIGHEST_PROTOCOL)
 		
 	accuracy = predict(clf, X_test_tfidf, y_test)
-	print ('Accurancy = %.2f%%' %  accuracy) #Accurancy = 71.60%
+	print ('Accurancy = %.2f%%' %  accuracy) #Accurancy = 73.80%
 	
 	
 if __name__ == '__main__':

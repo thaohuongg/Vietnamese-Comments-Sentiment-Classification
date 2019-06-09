@@ -1,0 +1,15 @@
+# Python cache
+__pycache__
+
+# Raw data
+raw_data/
+
+# Preprocessed data
+preprocessed_data/
+
+# test html
+tmp.html
+
+# Test python
+__test*
+

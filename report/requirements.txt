@@ -1,0 +1,4 @@
+pyvi
+gensim
+pickle
+sklearn

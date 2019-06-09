@@ -13,11 +13,6 @@ def turn_into_vector():
 		for comment in comments:
 			comment = ViTokenizer.tokenize(comment)
 			comment = gensim.utils.simple_preprocess(comment)
-			'''
-			for word in comment:
-				if word in stopwords:
-					comment.remove(word)
-			'''
 			X.append(comment)
 			y.append(label)
 		return X,y
@@ -52,17 +47,7 @@ def turn_into_vector():
 	print('Turned into vectors successfully')
 	
 def main():
-	'''
-	stopwords = set()
-	with open (r'stopwords.txt', 'r', encoding="utf8") as file:
-		line = file.readline() 
-		while line:
-			line = line = line.strip('\n')
-			stopwords.add(line)
-			line = file.readline()
-	'''
 	turn_into_vector()
-	#turn_into_vector(stopwords)
 	
 if __name__ == '__main__':
 	main()

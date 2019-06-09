@@ -59,21 +59,15 @@ def main():
 	print('Loaded successfully')
 	
 	#----------------------------------------------------
-	'''
-	stopwords = set()
-	with open (r'stopwords.txt', 'r', encoding="utf8") as file:
-		line = file.readline() 
-		while line:
-			line = line = line.strip('\n')
-			stopwords.add(line)
-			line = file.readline()
-	X_test, y_test, data = turn_into_vector(r'comments2.json',stopwords)
+	
+	X_test, y_test, data = turn_into_vector(r'comments.json',stopwords)
 	X_test_tfidf =  tfidf_vect.fit_transform(X_test)
 	to_xls(clf, X_test_tfidf, data)
-	accuracy = model.predict(clf, X_test_tfidf, y_test)
+	accuracy = model.predict(clf, X_test_tfidf, y_test, 'prediction1.xls')
 	print ('Accurancy = %.2f%%' %  accuracy)
-	'''
+	
 	#-----------------------------------------------------
+	'''
 	with open (r'../../preprocessed_data/test_pos_comments.pickle', 'rb') as file:
 		test_pos_comments = pickle.load(file)
 		
@@ -86,6 +80,7 @@ def main():
 		X_test = pickle.load(file)
 	X_test_tfidf =  tfidf_vect.fit_transform(X_test)
 	to_xls(clf, X_test_tfidf, data, 'prediction.xls')
+	'''
 	
 if __name__ == '__main__':
 	main()
